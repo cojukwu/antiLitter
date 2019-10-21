@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="This quiz app tests your skills,\nmaking you more conscience\nwhen you decide to throw\nsomething away and promotes\nanti-littering."
+            android:text="This quiz app tests your skills,\nmaking you more conscious\nwhen you decide to throw\nsomething away and promotes\nanti-littering."
             android:textAlignment="center"
             android:textColor="@color/textColor"
             android:textSize="20dp" />
