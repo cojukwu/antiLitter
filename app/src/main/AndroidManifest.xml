@@ -22,6 +22,7 @@
             android:theme="@style/AppTheme2"></activity>
         <activity android:name=".EndScreenActivity"
             android:theme="@style/AppTheme2">
+
         </activity>
     </application>
 

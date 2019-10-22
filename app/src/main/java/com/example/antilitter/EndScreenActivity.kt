@@ -10,6 +10,8 @@ import android.widget.TextView
 import android.widget.ProgressBar
 import android.app.Activity
 import android.content.Intent
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 
 // End of the game Activity
 class EndScreenActivity : AppCompatActivity() {
@@ -17,6 +19,10 @@ class EndScreenActivity : AppCompatActivity() {
     private var score : TextView? = null
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
+    private var flare : ImageView? = null
+
+    // Animation
+    private var animation: Animation? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +32,17 @@ class EndScreenActivity : AppCompatActivity() {
         score = findViewById<View>(R.id.myScore) as TextView
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
+        flare = findViewById<View>(R.id.flare) as ImageView
 
         val sofiaPro = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
         title?.setTypeface(sofiaPro)
         score?.setTypeface(sofiaPro)
+
+        // Animation
+        animation = AnimationUtils.loadAnimation(this@EndScreenActivity , R.anim.animation)
+        flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
+        flare?.startAnimation(animation)
+
 
         playAgainBtn?.setOnClickListener {
             val endIntent = Intent(this@EndScreenActivity, MainActivity::class.java)
