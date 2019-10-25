@@ -48,5 +48,6 @@ class MainActivity : AppCompatActivity() {
         score?.setTypeface(sofiaPro)
         question?.setTypeface(sofiaPro)
         numberQuestion?.setTypeface(sofiaPro)
+        // hi
     }
 }
