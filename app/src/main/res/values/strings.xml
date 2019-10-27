@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">AntiLitter</string>
+    <string name="1">The average person generates \n over 4 pounds of trash \n every day and about 1.5 tons \n of solid waste per year.</string>
+    <string name="2">Nearly all litter ends up in \n the ocean. It is predicted \n by the year 2050 that there \n will be more pounds of plastic \n in the ocean than fish.</string>
+    <string name="3">The most littered item is fast \n food packaging. The chance \n of people littering these kinds \n of items increases greatly \n on highways.</string>
+    <string name="4">One million birds and 100 thousand \n sea animals are killed \n every year as a result of \n being trapped in or eating \n some litter item.</string>
+    <string name="5">Littering is illegal. Fines vary \n by state and by city and \n county, you will be charged \n if you are caught littering.</string>
+    <string name="6">Litter is very expensive. Every \n year millions of taxpayer’s \n dollars are spent cleaning \n up litter.</string>
+    <string name="7">Litter spoils water quality. The \n hazardous waste seeps into \n soil and can cause groundwater \n pollution.</string>
+    <string name="8">Litter can lead to animal attacks \n as animals are drawn closer \n to civilization.</string>
+    <string name="9">About 25,000 car accidents in \n the US are caused by litter \n each year.</string>
+    <string name="10">70% of the billions of pounds \n of litter that end up in the \n world's waterways sinks straight to \n the bottom harming the animals \n and plants that live on the \n ocean floor.</string>
+    <string name="11">One littered plastic bottle \n can take 450 years to \n decompose.</string>
+    <string name="12">South Carolina contributes the \n most litter and Washington \n state contributes the least.</string>
+    <string name="13">Litter contributes to the \n Great Pacific Garbage Patch, \n which is an extremely large \n island made of trash \n estimated to be anywhere from \n 270,000 to 5.8 million square \n miles floating in the Pacific \n Ocean. </string>
+    <string name="14">Motorists account for 53% \n of all litter produced \n annually.</string>
+    <string name="15">The 5 most common littered \n items found in coastal cleanups \n around the world are: plastic \n cigarette butts, food wrappers, \n plastic beverage bottles, \n plastic bottle caps, and plastic \n straws and drink stirrers.</string>
+    <string name="16">Litter contributes to the \n 15 to 51 trillion particles \n of floating micro plastics in \n our oceans, weighing between \n 205-520 million pounds. Micro \n plastics are too small to \n be filtered out by many \n wastewater treatment plants.</string>
+    <string name="17">Approximately every square \n mile of ocean has more than \n 45,000 pieces of plastic \n floating in it.</string>
+    <string name="18">Fish and other marine life \n often can’t tell the difference \n between littered plastic and food. \n If the animal eats plastic, \n they can’t digest it. The \n plastic fills their stomachs, \n and they starve to death.</string>
+    <string name="19">Approximately one truckload \n of plastic enters the ocean \n every single minute.</string>
+    <string name="20">Littered styrofoam takes 80 \n years, littered aluminum takes \n 200 years, and littered \n plastic takes 400 years \n to decompose.</string>
 </resources>
