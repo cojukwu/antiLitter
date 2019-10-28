@@ -87,6 +87,7 @@
         android:progressBackgroundTint="@color/progressBarBackground"
         android:progressTint="@color/textColor"
         android:scaleY="8"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
