@@ -80,16 +80,15 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:progressBackgroundTint="@color/progressBarBackground"
-        android:progressTint="@color/textColor"
-        android:scaleY="8"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:progress="10"
+        android:progressDrawable="@drawable/rounded_progress_bar"/>
 
     <TextView
         android:id="@+id/questionNum"
