@@ -103,7 +103,15 @@ class MainActivity : AppCompatActivity() {
         image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))
         type = mQuestionLibrary!!.getType(shuffleList.get(numberQuestion))
         litterImage?.setImageResource(image)
-        numberQuestion++;
+        numberQuestion++
+
+        // Go to end screen
+        if (numberQuestion == 20) {
+            val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
+            startActivity(endIntent)
+        }
+
+
     }
 
     companion object {
