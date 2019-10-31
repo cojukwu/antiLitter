@@ -10,28 +10,40 @@ import android.widget.TextView
 import android.widget.ProgressBar
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 
 // The Questions page AKA MainActivity
 class MainActivity : AppCompatActivity() {
 
     // UI Elements
-    private var score: TextView? = null
-    private var question: TextView? = null
-    private var numberQuestion : TextView? = null
+    private var scoreView: TextView? = null
+    private var questionView: TextView? = null
+    private var numberQuestionView : TextView? = null
     private var litterImage: ImageView? = null
     private var compostBtn: ImageButton? = null
     private var recycleBtn: ImageButton? = null
     private var trashBtn: ImageButton? = null
     private var progressBar: ProgressBar? = null
 
+    // Data Element
+    private var mQuestionLibrary: QuestionLibrary? = QuestionLibrary()
+    private var numberQuestion: Int = 0
+    private var score: Int = 0
+    private var image: Int = 0
+    private var type: String = ""
+    private lateinit var shuffleList: MutableList<Int>
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Other Text
-        score = findViewById<View>(R.id.score) as TextView
-        question = findViewById<View>(R.id.question) as TextView
-        numberQuestion = findViewById<View>(R.id.questionNum) as TextView
+        scoreView = findViewById<View>(R.id.score) as TextView
+        questionView = findViewById<View>(R.id.question) as TextView
+        numberQuestionView = findViewById<View>(R.id.questionNum) as TextView
         // Main Image
         litterImage = findViewById<View>(R.id.litterImage) as ImageView
         // Buttons
@@ -45,9 +57,58 @@ class MainActivity : AppCompatActivity() {
         val sofiaPro = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
 
         // Setting the fonts
-        score?.setTypeface(sofiaPro)
-        question?.setTypeface(sofiaPro)
-        numberQuestion?.setTypeface(sofiaPro)
-        // hi
+        scoreView?.setTypeface(sofiaPro)
+        questionView?.setTypeface(sofiaPro)
+        numberQuestionView?.setTypeface(sofiaPro)
+
+        shuffleList = (0..19).toMutableList()
+        shuffleList.shuffle()
+
+        updateQuestion()
+
+        // Button Handlers
+        compostBtn?.setOnClickListener {
+            if (type.equals("compost")) { // correct
+                score += 1
+                Log.d(TAG,"correct answer")
+            } else { // wrong
+                Log.d(TAG, "incorrect answer")
+            }
+            updateQuestion()
+        }
+
+        recycleBtn?.setOnClickListener {
+            if (type.equals("recycle")) { // correct
+                score += 1
+                Log.d(TAG,"correct answer")
+            } else { // wrong
+                Log.d(TAG, "incorrect answer")
+            }
+            updateQuestion()
+        }
+        trashBtn?.setOnClickListener {
+            if (type.equals("trash")) {
+                score += 1
+                Log.d(TAG,"correct answer")
+            } else {
+                Log.d(TAG, "incorrect answer")
+
+            }
+            updateQuestion()
+        }
+
     }
+
+    fun updateQuestion() {
+        image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))
+        type = mQuestionLibrary!!.getType(shuffleList.get(numberQuestion))
+        litterImage?.setImageResource(image)
+        numberQuestion++;
+    }
+
+    companion object {
+        val TAG = "MAIN_ACTIVITY"
+    }
+
+
 }
