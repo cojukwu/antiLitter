@@ -54,12 +54,14 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
 
         // Import font (Sofia pro)
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
+        val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
+        val sofiaSemiBold = Typeface.createFromAsset(assets, "Fonts/Sofia Pro SemiBold.ttf")
+
 
         // Setting the fonts
-        scoreView?.setTypeface(sofiaPro)
-        questionView?.setTypeface(sofiaPro)
-        numberQuestionView?.setTypeface(sofiaPro)
+        scoreView?.setTypeface(sofiaSemiBold)
+        questionView?.setTypeface(sofiaProBold)
+        numberQuestionView?.setTypeface(sofiaSemiBold)
 
         shuffleList = (0..19).toMutableList()
         shuffleList.shuffle()
