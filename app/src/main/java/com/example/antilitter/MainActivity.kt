@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
         numberQuestion++
 
         // Go to end screen
-        if (numberQuestion == 20) {
+        if (numberQuestion == 19) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
             startActivity(endIntent)
         }
