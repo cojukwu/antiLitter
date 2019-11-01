@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private var image: Int = 0
     private var type: String = ""
     private lateinit var shuffleList: MutableList<Int>
-
+//hi
 
 
 
