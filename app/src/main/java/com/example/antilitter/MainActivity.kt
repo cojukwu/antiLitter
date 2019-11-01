@@ -11,6 +11,9 @@ import android.widget.ProgressBar
 import android.app.Activity
 import android.content.Intent
 import android.util.Log
+import android.view.Gravity
+import android.widget.Toast
+
 
 // The Questions page AKA MainActivity
 class MainActivity : AppCompatActivity() {
@@ -72,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         compostBtn?.setOnClickListener {
             if (type.equals("compost")) { // correct
                 score += 1
-                Log.d(TAG,"correct answer")
+               Log.d(TAG,"correct answer")
             } else { // wrong
                 Log.d(TAG, "incorrect answer")
             }
