@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private var numberQuestion: Int = 0
     private var score: Int = 0
     private var image: Int = 0
+    private var prog: Int = 5
     private var type: String = ""
     private lateinit var shuffleList: MutableList<Int>
 //hi
@@ -111,11 +112,13 @@ class MainActivity : AppCompatActivity() {
         numberQuestion++
 
         // Go to end screen
-        if (numberQuestion == 19) {
+        if (numberQuestion == 20) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
             startActivity(endIntent)
         }
 
+        progressBar?.setProgress(prog)
+        prog+=5
 
     }
 
