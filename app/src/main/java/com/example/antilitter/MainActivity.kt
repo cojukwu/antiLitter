@@ -1,6 +1,5 @@
 package com.example.antilitter
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,7 +7,6 @@ import android.widget.*
 import android.graphics.Typeface
 import android.widget.TextView
 import android.widget.ProgressBar
-import android.app.Activity
 import android.content.Intent
 import android.util.Log
 import android.view.Gravity
@@ -36,9 +34,6 @@ class MainActivity : AppCompatActivity() {
     private var prog: Int = 5
     private var type: String = ""
     private lateinit var shuffleList: MutableList<Int>
-//hi
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,9 +53,8 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
 
         // Import font (Sofia pro)
-        val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
-        val sofiaSemiBold = Typeface.createFromAsset(assets, "Fonts/Sofia Pro SemiBold.ttf")
-
+        val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
+        val sofiaSemiBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_semibold.ttf")
 
         // Setting the fonts
         scoreView?.setTypeface(sofiaSemiBold)
@@ -78,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                 score += 1
                Log.d(TAG,"correct answer")
             } else { // wrong
+                displayToast(type)
                 Log.d(TAG, "incorrect answer")
             }
             updateQuestion()
@@ -88,6 +83,7 @@ class MainActivity : AppCompatActivity() {
                 score += 1
                 Log.d(TAG,"correct answer")
             } else { // wrong
+                displayToast(type)
                 Log.d(TAG, "incorrect answer")
             }
             updateQuestion()
@@ -97,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                 score += 1
                 Log.d(TAG,"correct answer")
             } else {
+                displayToast(type)
                 Log.d(TAG, "incorrect answer")
 
             }
@@ -119,6 +116,43 @@ class MainActivity : AppCompatActivity() {
 
         progressBar?.setProgress(prog)
         prog+=5
+
+    }
+    // Displays toast messages
+    fun displayToast(type : String) {
+        // Compost
+        if (type == "compost") {
+            val toast = Toast(applicationContext)
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = layoutInflater.inflate(
+                R.layout.toast_compost,
+                findViewById(R.id.toast_compost)
+            )
+            toast.show()
+        }
+        // Recycle
+        else if (type == "recycle") {
+            val toast = Toast(applicationContext)
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = layoutInflater.inflate(
+                R.layout.toast_recycle,
+                findViewById(R.id.toast_recy)
+            )
+            toast.show()
+        }
+        // Trash
+        else {
+            val toast = Toast(applicationContext)
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = layoutInflater.inflate(
+                R.layout.toast_trash,
+                findViewById(R.id.toast_tra)
+            )
+            toast.show()
+        }
 
     }
 

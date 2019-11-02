@@ -1,15 +1,10 @@
 package com.example.antilitter
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
 import android.graphics.Typeface
 import android.widget.TextView
-import android.widget.ProgressBar
-import android.app.Activity
-import android.content.Intent
 
 // About screen
 class AboutActivity : AppCompatActivity() {
@@ -28,7 +23,7 @@ class AboutActivity : AppCompatActivity() {
         creator = findViewById<View>(R.id.creators) as TextView
 
         // Import font (Sofia pro)
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/Sofia Pro SemiBold.ttf")
+        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_semibold.ttf")
         aboutText?.setTypeface(sofiaPro)
         introOne?.setTypeface(sofiaPro)
         introTwo?.setTypeface(sofiaPro)

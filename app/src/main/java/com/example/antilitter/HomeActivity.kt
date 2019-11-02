@@ -1,14 +1,11 @@
 package com.example.antilitter
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import android.graphics.Typeface
 import android.widget.TextView
-import android.widget.ProgressBar
-import android.app.Activity
 import android.content.Intent
 
 // The Home Page Activity
@@ -28,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
         aboutBtn = findViewById<View>(R.id.aboutBtn) as ImageButton
 
         // Import font (Sofia pro)
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
+        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
 
         // Set title font to Sofia pro
         title?.setTypeface(sofiaPro)

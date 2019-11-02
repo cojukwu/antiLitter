@@ -1,14 +1,11 @@
 package com.example.antilitter
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import android.graphics.Typeface
 import android.widget.TextView
-import android.widget.ProgressBar
-import android.app.Activity
 import android.content.Intent
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -34,7 +31,7 @@ class EndScreenActivity : AppCompatActivity() {
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
         flare = findViewById<View>(R.id.flare) as ImageView
 
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/SofiaProBold.ttf")
+        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
         title?.setTypeface(sofiaPro)
         score?.setTypeface(sofiaPro)
 
