@@ -58,7 +58,7 @@
             app:srcCompat="@drawable/btn_recycle" />
 
         <TextView
-            android:id="@+id/fact"
+            android:id="@+id/fact_rec"
             android:layout_width="242dp"
             android:layout_height="170dp"
             android:layout_centerHorizontal="true"

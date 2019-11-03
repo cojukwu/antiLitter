@@ -8,6 +8,7 @@ import android.graphics.Typeface
 import android.widget.TextView
 import android.widget.ProgressBar
 import android.content.Intent
+import android.text.Layout
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
@@ -20,6 +21,9 @@ class MainActivity : AppCompatActivity() {
     private var scoreView: TextView? = null
     private var questionView: TextView? = null
     private var numberQuestionView : TextView? = null
+    private var factTrash : TextView? = null
+    private var factComp : TextView? = null
+    private var factRecy : TextView? = null
     private var litterImage: ImageView? = null
     private var compostBtn: ImageButton? = null
     private var recycleBtn: ImageButton? = null
@@ -34,6 +38,12 @@ class MainActivity : AppCompatActivity() {
     private var prog: Int = 5
     private var type: String = ""
     private lateinit var shuffleList: MutableList<Int>
+
+    // List of Facts
+    val facts = listOf(R.string.s1, R.string.s2, R.string.s3, R.string.s4, R.string.s5,
+        R.string.s6, R.string.s7, R.string.s8, R.string.s9, R.string.s11,
+        R.string.s12, R.string.s14, R.string.s16, R.string.s17, R.string.s18, R.string.s19,
+        R.string.s20).toMutableList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,16 +130,20 @@ class MainActivity : AppCompatActivity() {
     }
     // Displays toast messages
     fun displayToast(type : String) {
+
         // Compost
         if (type == "compost") {
             val toast = Toast(applicationContext)
             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
             toast.duration = Toast.LENGTH_LONG
-            toast.view = layoutInflater.inflate(
-                R.layout.toast_compost,
-                findViewById(R.id.toast_compost)
-            )
+            toast.view = layoutInflater.inflate(R.layout.toast_compost, findViewById(R.id.toast_comp))
+
+            // Sets new Random fact
+            facts.shuffle()
+            factComp = toast.view.findViewById<View>(R.id.fact_comp) as TextView
+            factComp?.setText(facts.get(0))
             toast.show()
+
         }
         // Recycle
         else if (type == "recycle") {
@@ -140,6 +154,10 @@ class MainActivity : AppCompatActivity() {
                 R.layout.toast_recycle,
                 findViewById(R.id.toast_recy)
             )
+            // Sets new random fact
+            facts.shuffle()
+            factRecy = toast.view.findViewById<View>(R.id.fact_rec) as TextView
+            factRecy?.setText(facts.get(0))
             toast.show()
         }
         // Trash
@@ -151,11 +169,15 @@ class MainActivity : AppCompatActivity() {
                 R.layout.toast_trash,
                 findViewById(R.id.toast_tra)
             )
+            // Sets new random fact
+            facts.shuffle()
+            factTrash = toast.view.findViewById<View>(R.id.fact_trash) as TextView
+            factTrash?.setText(facts.get(0))
             toast.show()
         }
 
     }
-
+    
     companion object {
         val TAG = "MAIN_ACTIVITY"
     }

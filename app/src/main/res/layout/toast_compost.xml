@@ -9,7 +9,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/toast_compost"
+        android:id="@+id/toast_comp"
         android:layout_width="350dp"
         android:layout_height="500dp"
         android:layout_marginTop="32dp"
@@ -58,7 +58,7 @@
             app:srcCompat="@drawable/btn_compost" />
 
         <TextView
-            android:id="@+id/fact"
+            android:id="@+id/fact_comp"
             android:layout_width="242dp"
             android:layout_height="170dp"
             android:layout_centerHorizontal="true"
