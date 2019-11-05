@@ -39,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:text="Score: 0"
         android:textColor="@color/textColor"
-        android:textSize="25dp"
+        android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
@@ -97,9 +97,33 @@
         android:layout_marginStart="16dp"
         android:text="0/20"
         android:textColor="@color/textColor"
-        android:textSize="25dp"
+        android:textSize="23dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/sofia_pro_semibold"
+        android:textColor="@color/textColor"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/question"
+        app:layout_constraintEnd_toStartOf="@+id/score" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="21dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/question"
+        app:layout_constraintEnd_toStartOf="@+id/chronometer"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/questionNum"
+        app:srcCompat="@drawable/alarmclock" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

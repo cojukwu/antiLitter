@@ -40,7 +40,6 @@ class EndScreenActivity : AppCompatActivity() {
         flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
         flare?.startAnimation(animation)
 
-
         playAgainBtn?.setOnClickListener {
             val endIntent = Intent(this@EndScreenActivity, MainActivity::class.java)
             startActivity(endIntent)
