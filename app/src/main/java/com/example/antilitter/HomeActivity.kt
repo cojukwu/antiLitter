@@ -34,11 +34,13 @@ class HomeActivity : AppCompatActivity() {
         playBtn?.setOnClickListener{
             val gameIntent = Intent(this@HomeActivity, MainActivity::class.java)
             startActivity(gameIntent)
+            overridePendingTransition(R.anim.trans, R.anim.out)
         }
 
         aboutBtn?.setOnClickListener{
             val aboutIntent = Intent(this@HomeActivity, AboutActivity::class.java)
             startActivity(aboutIntent)
+            overridePendingTransition(R.anim.trans, R.anim.out)
         }
 
     }
