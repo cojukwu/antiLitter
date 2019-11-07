@@ -8,11 +8,46 @@
     tools:context=".HomeActivity">
 
 
+    <ImageButton
+        android:id="@+id/playBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="472dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/playbtn" />
+
+    <ImageButton
+        android:id="@+id/scoresBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="544dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scorebtn" />
+
+    <ImageButton
+        android:id="@+id/aboutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.984"
+        app:srcCompat="@drawable/aboutbtn" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="220dp"
         android:gravity="left"
         android:text="No More\nLitter."
         android:textColor="@color/textColor"
@@ -22,32 +57,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/playBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/play_btn" />
-
-    <ImageButton
-        android:id="@+id/aboutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="504dp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/about_btn" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/globe"
         android:layout_width="56dp"
         android:layout_height="64dp"
         android:layout_marginStart="252dp"
@@ -57,6 +68,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961"
         app:srcCompat="@drawable/earth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,8 @@ class EndScreenActivity : AppCompatActivity() {
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
     private var flare : ImageView? = null
+    private var yourTime : TextView? = null
+    private var time: String = ""
 
     // Animation
     private var animation: Animation? = null
@@ -30,6 +32,7 @@ class EndScreenActivity : AppCompatActivity() {
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
         flare = findViewById<View>(R.id.flare) as ImageView
+        yourTime = findViewById<View>(R.id.yourTime) as TextView
 
         val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
         title?.setTypeface(sofiaPro)
@@ -49,5 +52,15 @@ class EndScreenActivity : AppCompatActivity() {
             val quitIntent = Intent(this@EndScreenActivity, HomeActivity::class.java)
             startActivity(quitIntent)
         }
+
+        // Need to fix the time
+        time = intent.getLongExtra(MainActivity.TIMER, 0).toString()
+        yourTime?.setText("Your Time : ${time}")
+
+    }
+    // Adds transitions
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.trans2, R.anim.out2)
     }
 }
