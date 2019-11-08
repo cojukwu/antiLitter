@@ -16,7 +16,6 @@ import android.widget.Toast
 
 // The Questions page AKA MainActivity
 class MainActivity : AppCompatActivity() {
-
     // UI Elements
     private var scoreView: TextView? = null
     private var questionView: TextView? = null
