@@ -30,5 +30,9 @@ class AboutActivity : AppCompatActivity() {
         creator?.setTypeface(sofiaPro)
 
     }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.trans2, R.anim.out2)
+    }
 
 }

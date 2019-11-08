@@ -8,10 +8,10 @@ import android.graphics.Typeface
 import android.widget.TextView
 import android.widget.ProgressBar
 import android.content.Intent
-import android.text.Layout
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
+import android.widget.Chronometer
 
 
 // The Questions page AKA MainActivity
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private var recycleBtn: ImageButton? = null
     private var trashBtn: ImageButton? = null
     private var progressBar: ProgressBar? = null
+    private var timer : Chronometer? = null
 
     // Data Element
     private var mQuestionLibrary: QuestionLibrary? = QuestionLibrary()
@@ -60,10 +61,13 @@ class MainActivity : AppCompatActivity() {
         trashBtn = findViewById<View>(R.id.trashBtn) as ImageButton
         // Progress Bar
         progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
+        timer = findViewById<View>(R.id.chronometer) as Chronometer
 
         // Import font (Sofia pro)
         val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
         val sofiaSemiBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_semibold.ttf")
+
+        timer?.start()
 
         // Setting the fonts
         scoreView?.setTypeface(sofiaSemiBold)
@@ -79,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         compostBtn?.setOnClickListener {
             if (type.equals("compost")) { // correct
                 score += 1
-               Log.d(TAG,"correct answer")
+                Log.d(TAG,"correct answer")
             } else { // wrong
                 displayToast(type)
                 Log.d(TAG, "incorrect answer")
@@ -104,7 +108,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 displayToast(type)
                 Log.d(TAG, "incorrect answer")
-
             }
             updateQuestion()
         }
@@ -115,11 +118,13 @@ class MainActivity : AppCompatActivity() {
         image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))
         type = mQuestionLibrary!!.getType(shuffleList.get(numberQuestion))
         litterImage?.setImageResource(image)
-        numberQuestion++
 
+        numberQuestion++
+        Log.d(TAG, numberQuestion.toString())
         // Go to end screen
         if (numberQuestion == 20) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
+            endIntent.putExtra(TIMER, timer?.base)
             startActivity(endIntent)
         }
 
@@ -144,6 +149,7 @@ class MainActivity : AppCompatActivity() {
             toast.show()
 
         }
+
         // Recycle
         else if (type == "recycle") {
             val toast = Toast(applicationContext)
@@ -159,6 +165,7 @@ class MainActivity : AppCompatActivity() {
             factRecy?.setText(facts.get(0))
             toast.show()
         }
+
         // Trash
         else {
             val toast = Toast(applicationContext)
@@ -176,9 +183,16 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    // Adds transitions
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.trans2, R.anim.out2)
+    }
     
     companion object {
         val TAG = "MAIN_ACTIVITY"
+        val TIMER = "TIMER"
     }
 
 
