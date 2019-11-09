@@ -55,7 +55,7 @@ class EndScreenActivity : AppCompatActivity() {
 
         // Need to fix the time
         time = intent.getLongExtra(MainActivity.TIMER, 0).toString()
-        yourTime?.setText("Your Time : ${time}")
+        yourTime?.setText("Your Time : 0")
 
     }
     // Adds transitions
