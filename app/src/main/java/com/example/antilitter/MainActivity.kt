@@ -17,7 +17,7 @@ import android.widget.Chronometer
 // The Questions page AKA MainActivity
 class MainActivity : AppCompatActivity() {
     // UI Elements
-    private var scoreView: TextView? = null
+    private lateinit var scoreView: TextView
     private var questionView: TextView? = null
     private var numberQuestionView : TextView? = null
     private var factTrash : TextView? = null
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     // Data Element
     private var mQuestionLibrary: QuestionLibrary? = QuestionLibrary()
     private var numberQuestion: Int = 0
-    private var score: Int = 0
+    var score: Int = 0
     private var image: Int = 0
     private var prog: Int = 5
     private var type: String = ""
@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         // Other Text
         scoreView = findViewById<View>(R.id.score) as TextView
+        scoreView.text = "Score: 0"
         questionView = findViewById<View>(R.id.question) as TextView
         numberQuestionView = findViewById<View>(R.id.questionNum) as TextView
         // Main Image
@@ -83,6 +84,7 @@ class MainActivity : AppCompatActivity() {
         compostBtn?.setOnClickListener {
             if (type.equals("compost")) { // correct
                 score += 1
+                scoreView.text = score.toString() + "/20"
                 Log.d(TAG,"correct answer")
             } else { // wrong
                 displayToast(type)
@@ -94,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         recycleBtn?.setOnClickListener {
             if (type.equals("recycle")) { // correct
                 score += 1
+                scoreView.text = score.toString() + "/20"
                 Log.d(TAG,"correct answer")
             } else { // wrong
                 displayToast(type)
@@ -104,6 +107,7 @@ class MainActivity : AppCompatActivity() {
         trashBtn?.setOnClickListener {
             if (type.equals("trash")) {
                 score += 1
+                scoreView.text = score.toString() + "/20"
                 Log.d(TAG,"correct answer")
             } else {
                 displayToast(type)
@@ -125,6 +129,7 @@ class MainActivity : AppCompatActivity() {
         if (numberQuestion == 20) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
             endIntent.putExtra(TIMER, timer?.base)
+            endIntent.putExtra(FINAL_SCORE, score)
             startActivity(endIntent)
         }
 
@@ -193,6 +198,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         val TAG = "MAIN_ACTIVITY"
         val TIMER = "TIMER"
+        val FINAL_SCORE = "FINAL_SCORE"
     }
 
 

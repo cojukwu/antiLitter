@@ -13,7 +13,8 @@ import android.view.animation.AnimationUtils
 // End of the game Activity
 class EndScreenActivity : AppCompatActivity() {
     private var title: TextView? = null
-    private var score : TextView? = null
+    private lateinit var score : TextView
+    //private lateinit var highScore : TextView
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
     private var flare : ImageView? = null
@@ -52,6 +53,8 @@ class EndScreenActivity : AppCompatActivity() {
             val quitIntent = Intent(this@EndScreenActivity, HomeActivity::class.java)
             startActivity(quitIntent)
         }
+
+        score.text = intent.getIntExtra(MainActivity.FINAL_SCORE, 0).toString() + "/20"
 
         // Need to fix the time
         time = intent.getLongExtra(MainActivity.TIMER, 0).toString()
