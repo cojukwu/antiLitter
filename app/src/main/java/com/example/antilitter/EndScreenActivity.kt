@@ -70,6 +70,17 @@ class EndScreenActivity : AppCompatActivity() {
         highScore = prefs.getInt(HIGH_SCORE_KEY, 0)
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
 
+        
+        if (score > 15) {
+            title?.setText("Amazing!")
+        }
+        else if (score >= 10 && score < 15) {
+            title?.setText("Good Job")
+        }
+        else if (score < 10) {
+            title?.setText("Needs Some Work")
+        }
+
         if (score > highScore) {
 
             // Get and edit high score
