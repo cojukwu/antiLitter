@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     // UI Elements
     private lateinit var scoreView: TextView
     private var questionView: TextView? = null
-    private var numberQuestionView : TextView? = null
+    private lateinit var numberQuestionView : TextView
     private var factTrash : TextView? = null
     private var factComp : TextView? = null
     private var factRecy : TextView? = null
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         compostBtn?.setOnClickListener {
             if (type.equals("compost")) { // correct
                 score += 1
-                scoreView.text = score.toString() + "/20"
+                scoreView.text = score.toString()
                 Log.d(TAG,"correct answer")
             } else { // wrong
                 displayToast(type)
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         recycleBtn?.setOnClickListener {
             if (type.equals("recycle")) { // correct
                 score += 1
-                scoreView.text = score.toString() + "/20"
+                scoreView.text = score.toString()
                 Log.d(TAG,"correct answer")
             } else { // wrong
                 displayToast(type)
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
         trashBtn?.setOnClickListener {
             if (type.equals("trash")) {
                 score += 1
-                scoreView.text = score.toString() + "/20"
+                scoreView.text = score.toString()
                 Log.d(TAG,"correct answer")
             } else {
                 displayToast(type)
@@ -124,6 +124,7 @@ class MainActivity : AppCompatActivity() {
         litterImage?.setImageResource(image)
 
         numberQuestion++
+        numberQuestionView.text = numberQuestion.toString() + "/20"
         Log.d(TAG, numberQuestion.toString())
         // Go to end screen
         if (numberQuestion == 20) {
