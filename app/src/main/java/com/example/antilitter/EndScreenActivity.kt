@@ -21,6 +21,7 @@ class EndScreenActivity : AppCompatActivity() {
     private var highScore : Int = 0
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
+    private var resetBtn: ImageButton? = null
     private var flare : ImageView? = null
     private var thumbsUp1 : ImageView? = null
     private var thumbsUp2 : ImageView? = null
@@ -39,6 +40,7 @@ class EndScreenActivity : AppCompatActivity() {
         scoreView = findViewById<View>(R.id.myScore) as TextView
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
+        resetBtn = findViewById<View>(R.id.resetBtn) as ImageButton
         flare = findViewById<View>(R.id.flare) as ImageView
         thumbsUp1 = findViewById<View>(R.id.flare_tUp1) as ImageView
         thumbsUp2 = findViewById<View>(R.id.flare_tUp2) as ImageView
@@ -62,6 +64,16 @@ class EndScreenActivity : AppCompatActivity() {
         quitBtn?.setOnClickListener {
             val quitIntent = Intent(this@EndScreenActivity, HomeActivity::class.java)
             startActivity(quitIntent)
+        }
+
+
+        resetBtn?.setOnClickListener {
+            val editor = prefs.edit()
+            editor.putInt(HIGH_SCORE_KEY, 0)
+            editor.apply()
+
+            highScoreView.text = "High Score: 0"
+            scoreView.text = "0/20"
         }
 
         scoreView.text = intent.getIntExtra(MainActivity.FINAL_SCORE, 0).toString() + "/20"
