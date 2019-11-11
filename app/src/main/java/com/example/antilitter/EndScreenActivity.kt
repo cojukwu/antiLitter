@@ -22,6 +22,8 @@ class EndScreenActivity : AppCompatActivity() {
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
     private var flare : ImageView? = null
+    private var thumbsUp1 : ImageView? = null
+    private var thumbsUp2 : ImageView? = null
     private var yourTime : TextView? = null
     private var time: String = ""
     private lateinit var prefs: SharedPreferences
@@ -38,6 +40,8 @@ class EndScreenActivity : AppCompatActivity() {
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
         flare = findViewById<View>(R.id.flare) as ImageView
+        thumbsUp1 = findViewById<View>(R.id.flare_tUp1) as ImageView
+        thumbsUp2 = findViewById<View>(R.id.flare_tUp2) as ImageView
         yourTime = findViewById<View>(R.id.yourTime) as TextView
         prefs = getPreferences(Context.MODE_PRIVATE)
 
@@ -71,12 +75,14 @@ class EndScreenActivity : AppCompatActivity() {
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
 
         
-        if (score > 15) {
+        if (score >= 15) {
             title?.setText("Amazing!")
         }
+
         else if (score >= 10 && score < 15) {
             title?.setText("Good Job")
         }
+
         else if (score < 10) {
             title?.setText("Needs Some Work")
         }
