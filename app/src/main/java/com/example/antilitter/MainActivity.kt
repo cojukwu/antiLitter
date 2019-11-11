@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         numberQuestionView.text = numberQuestion.toString() + "/20"
         Log.d(TAG, numberQuestion.toString())
         // Go to end screen
-        if (numberQuestion == 2) {
+        if (numberQuestion == 20) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
             endIntent.putExtra(TIMER, timer?.base)
             endIntent.putExtra(FINAL_SCORE, score)
