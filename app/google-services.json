@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "776436496429",
+    "firebase_url": "https://no-more-litter.firebaseio.com",
+    "project_id": "no-more-litter",
+    "storage_bucket": "no-more-litter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776436496429:android:05eaeeeec76a0ee4f020a4",
+        "android_client_info": {
+          "package_name": "com.example.antilitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776436496429-tj0nubn7colc4d13pnrku0ma7scco8qn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.antilitter",
+            "certificate_hash": "03ed29a1064dcef8b66b629747b6921f21d660d0"
+          }
+        },
+        {
+          "client_id": "776436496429-8nl6mqoqfa7s6ktibk44hhqt75s5kslt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZo0Sq_6MOjgCPzy3UJ41wnWSADC2yVNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776436496429-8nl6mqoqfa7s6ktibk44hhqt75s5kslt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
