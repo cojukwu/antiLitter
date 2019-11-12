@@ -15,7 +15,9 @@ class HomeActivity : AppCompatActivity() {
     private var title: TextView? = null
     private var playBtn: ImageButton? = null
     private var aboutBtn: ImageButton? = null
-    private var scoresBtn : ImageButton? = null
+    private var loginBtn : ImageButton? = null
+    private var registerBtn : ImageButton? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +26,8 @@ class HomeActivity : AppCompatActivity() {
         title = findViewById<View>(R.id.title) as TextView
         playBtn = findViewById<View>(R.id.playBtn) as ImageButton
         aboutBtn = findViewById<View>(R.id.aboutBtn) as ImageButton
-        scoresBtn = findViewById<View>(R.id.scoresBtn) as ImageButton
+        loginBtn = findViewById<View>(R.id.loginBtn) as ImageButton
+        registerBtn = findViewById<View>(R.id.signUpBtn) as ImageButton
         // Import font (Sofia pro)
         val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
 
@@ -45,10 +48,17 @@ class HomeActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.trans, R.anim.out)
         }
 
-        // Score Button Pressed
-        scoresBtn?.setOnClickListener {
-            val scoresIntent = Intent(this@HomeActivity, ScoresActivity::class.java)
-            startActivity(scoresIntent)
+        // SignUp (register) Button Pressed
+        registerBtn?.setOnClickListener {
+            val regIntent = Intent(this@HomeActivity, RegistrationActivity::class.java)
+            startActivity(regIntent)
+            overridePendingTransition(R.anim.trans, R.anim.out)
+        }
+
+        // Login Button Pressed
+        loginBtn?.setOnClickListener {
+            val loginIntent = Intent(this@HomeActivity, LoginActivity::class.java)
+            startActivity(loginIntent)
             overridePendingTransition(R.anim.trans, R.anim.out)
         }
 

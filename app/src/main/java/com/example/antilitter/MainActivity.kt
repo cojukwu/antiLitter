@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
         val sofiaSemiBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_semibold.ttf")
 
+        // Starts the timer
         timer?.start()
 
         // Setting the fonts

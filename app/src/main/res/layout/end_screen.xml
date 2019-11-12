@@ -89,14 +89,13 @@
         android:id="@+id/yourTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="268dp"
+        android:layout_marginBottom="272dp"
         android:fontFamily="@font/sofia_pro_bold"
         android:text="Your Time: 00:00"
         android:textColor="@color/textColor"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -140,16 +139,6 @@
         app:layout_constraintStart_toEndOf="@+id/myScore"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/thumbsup" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="29dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="272dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/alarmclock" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

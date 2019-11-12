@@ -15,14 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".AboutActivity"
             android:theme="@style/AppTheme2"></activity>
         <activity android:name=".EndScreenActivity"
             android:theme="@style/AppTheme2">
         </activity>
-        <activity android:name=".ScoresActivity"></activity>
+        <activity android:name=".RegistrationActivity"
+            android:theme="@style/AppTheme2"></activity>
+        <activity android:name=".LoginActivity"
+            android:theme="@style/AppTheme2"></activity>
     </application>
 
 </manifest>
