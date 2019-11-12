@@ -124,25 +124,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateQuestion() {
-        image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))
-        type = mQuestionLibrary!!.getType(shuffleList.get(numberQuestion))
-        litterImage?.setImageResource(image)
-
-        numberQuestionView.text = (numberQuestion + 1).toString() + "/20"
-
-        Log.d(TAG, numberQuestion.toString())
-
-        numberQuestion++
-        // Go to end screen
         if (numberQuestion == 20) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
             endIntent.putExtra(TIMER, SystemClock.elapsedRealtime() - timer!!.base)
             endIntent.putExtra(FINAL_SCORE, score)
             startActivity(endIntent)
-        }
-        progressBar?.setProgress(prog)
-        prog+=5
+        } else {
+            image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))
+            type = mQuestionLibrary!!.getType(shuffleList.get(numberQuestion))
+            litterImage?.setImageResource(image)
 
+            numberQuestionView.text = (numberQuestion + 1).toString() + "/20"
+
+            Log.d(TAG, numberQuestion.toString())
+
+            numberQuestion++
+            // Go to end screen
+
+            progressBar?.setProgress(prog)
+            prog += 5
+        }
 
     }
     // Displays toast messages
