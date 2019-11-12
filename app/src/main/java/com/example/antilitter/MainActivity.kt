@@ -8,6 +8,7 @@ import android.graphics.Typeface
 import android.widget.TextView
 import android.widget.ProgressBar
 import android.content.Intent
+import android.os.SystemClock
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
@@ -29,11 +30,13 @@ class MainActivity : AppCompatActivity() {
     private var trashBtn: ImageButton? = null
     private var progressBar: ProgressBar? = null
     private var timer : Chronometer? = null
+    private var layout : View? = null
 
     // Data Element
     private var mQuestionLibrary: QuestionLibrary? = QuestionLibrary()
     private var numberQuestion: Int = 0
     var score: Int = 0
+    private var count : Int = 0
     private var image: Int = 0
     private var prog: Int = 5
     private var type: String = ""
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        layout = findViewById<View>(R.id.layout)
         // Other Text
         scoreView = findViewById<View>(R.id.score) as TextView
         scoreView.text = "Score: 0"
@@ -123,19 +127,21 @@ class MainActivity : AppCompatActivity() {
         type = mQuestionLibrary!!.getType(shuffleList.get(numberQuestion))
         litterImage?.setImageResource(image)
 
-        numberQuestion++
-        numberQuestionView.text = numberQuestion.toString() + "/20"
+        numberQuestionView.text = (numberQuestion + 1).toString() + "/20"
+
         Log.d(TAG, numberQuestion.toString())
+
+        numberQuestion++
         // Go to end screen
         if (numberQuestion == 20) {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
-            endIntent.putExtra(TIMER, timer?.base)
+            endIntent.putExtra(TIMER, SystemClock.elapsedRealtime() - timer!!.base)
             endIntent.putExtra(FINAL_SCORE, score)
             startActivity(endIntent)
         }
-
         progressBar?.setProgress(prog)
         prog+=5
+
 
     }
     // Displays toast messages

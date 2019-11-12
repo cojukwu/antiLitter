@@ -11,6 +11,9 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.content.SharedPreferences
 import android.content.Context
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
 // End of the game Activity
 class EndScreenActivity : AppCompatActivity() {
@@ -26,7 +29,10 @@ class EndScreenActivity : AppCompatActivity() {
     private var thumbsUp1 : ImageView? = null
     private var thumbsUp2 : ImageView? = null
     private var yourTime : TextView? = null
-    private var time: String = ""
+    private var time: Long = 0
+    private var hours: Int = 0
+    private var minutes: Int = 0
+    private var seconds: Int = 0
     private lateinit var prefs: SharedPreferences
 
     // Animation
@@ -78,15 +84,17 @@ class EndScreenActivity : AppCompatActivity() {
 
         scoreView.text = intent.getIntExtra(MainActivity.FINAL_SCORE, 0).toString() + "/20"
 
-        // Need to fix the time
-        time = intent.getLongExtra(MainActivity.TIMER, 0).toString()
-        yourTime?.setText("Your Time : 00:00")
+        // Displays time
+        time = intent.getLongExtra(MainActivity.TIMER, 0)
+        minutes = ((time - hours * 3600000) / 60000).toInt()
+        seconds = ((time - hours * 3600000 - minutes * 60000) / 1000).toInt()
+        yourTime?.setText("Your Time : 0${minutes}:${seconds}")
 
         highScoreView = findViewById(R.id.yourHighScore)
         highScore = prefs.getInt(HIGH_SCORE_KEY, 0)
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
 
-        
+        // Change text based on score
         if (score >= 15) {
             title?.setText("Amazing!")
         }
@@ -106,11 +114,11 @@ class EndScreenActivity : AppCompatActivity() {
             editor.putInt(HIGH_SCORE_KEY, score)
             editor.apply()
 
-            highScoreView.text = "High Score:" + score.toString()
+            highScoreView.text = "High Score: " + score.toString()
         }
 
         else {
-            highScoreView.text = "High Score:" + highScore.toString()
+            highScoreView.text = "High Score: " + highScore.toString()
         }
 
 

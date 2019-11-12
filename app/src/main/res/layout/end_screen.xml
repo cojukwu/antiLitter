@@ -12,21 +12,20 @@
         android:id="@+id/playAgainBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="484dp"
         android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/quitBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myScore"
-        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play_again_btn" />
+
 
     <ImageButton
         android:id="@+id/quitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="124dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,14 +37,13 @@
         android:id="@+id/resetBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="56dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/quit_btn" />
-
 
     <ImageView
         android:id="@+id/flare"
@@ -64,7 +62,7 @@
         android:id="@+id/myScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="232dp"
         android:text="0/20"
         android:textColor="@color/textColor"
         android:textSize="80dp"
@@ -77,8 +75,8 @@
         android:id="@+id/congratsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
         android:gravity="center"
-        android:layout_marginTop="136dp"
         android:text="text"
         android:textColor="@color/textColor"
         android:textSize="40dp"
@@ -91,20 +89,21 @@
         android:id="@+id/yourTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="268dp"
         android:fontFamily="@font/sofia_pro_bold"
         android:text="Your Time: 00:00"
         android:textColor="@color/textColor"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/playAgainBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/yourHighScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="392dp"
         android:fontFamily="@font/sofia_pro_bold"
         android:text="High Score: 0"
         android:textColor="@color/textColor"
@@ -141,6 +140,16 @@
         app:layout_constraintStart_toEndOf="@+id/myScore"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/thumbsup" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="29dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="272dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/alarmclock" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
