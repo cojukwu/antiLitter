@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
     private var type: String = ""
     private lateinit var shuffleList: MutableList<Int>
 
+    internal lateinit var UserId: String
+    internal lateinit var UserMail: String
+
     // List of Facts
     val facts = listOf(R.string.s1, R.string.s2, R.string.s3, R.string.s4, R.string.s5,
         R.string.s6, R.string.s7, R.string.s8, R.string.s9, R.string.s11,
@@ -67,6 +70,11 @@ class MainActivity : AppCompatActivity() {
         // Progress Bar
         progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
         timer = findViewById<View>(R.id.chronometer) as Chronometer
+
+        // Get User ID
+        val intent = intent
+        UserId = intent.getStringExtra(LoginActivity.UserID)
+        UserMail = intent.getStringExtra(LoginActivity.UserMail)
 
         // Import font (Sofia pro)
         val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
@@ -128,6 +136,8 @@ class MainActivity : AppCompatActivity() {
             val endIntent = Intent(this@MainActivity, EndScreenActivity::class.java)
             endIntent.putExtra(TIMER, SystemClock.elapsedRealtime() - timer!!.base)
             endIntent.putExtra(FINAL_SCORE, score)
+            endIntent.putExtra(USER_ID, UserId)
+            endIntent.putExtra(USER_MAIL, UserMail)
             startActivity(endIntent)
         } else {
             image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))
@@ -208,6 +218,8 @@ class MainActivity : AppCompatActivity() {
         val TAG = "MAIN_ACTIVITY"
         val TIMER = "TIMER"
         val FINAL_SCORE = "FINAL_SCORE"
+        val USER_ID = "USER_ID"
+        val USER_MAIL = "USER_MAIL"
     }
 
 

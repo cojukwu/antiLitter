@@ -38,6 +38,11 @@ class EndScreenActivity : AppCompatActivity() {
     // Animation
     private var animation: Animation? = null
 
+    // User information
+    internal lateinit var UserId: String
+    internal lateinit var UserMail: String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.end_screen)
@@ -81,6 +86,11 @@ class EndScreenActivity : AppCompatActivity() {
             highScoreView.text = "High Score: 0"
             scoreView.text = "0/20"
         }
+
+        // Get user information
+        val intent = intent
+        UserId = intent.getStringExtra(MainActivity.USER_ID)
+        UserMail = intent.getStringExtra(MainActivity.USER_MAIL)
 
         scoreView.text = intent.getIntExtra(MainActivity.FINAL_SCORE, 0).toString() + "/20"
 

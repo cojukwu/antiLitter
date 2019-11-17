@@ -65,6 +65,7 @@ class LoginActivity : AppCompatActivity(){
                     Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.putExtra(UserID, mAuth?.currentUser?.uid)
+                    intent.putExtra(UserMail, email)
                     startActivity(intent)
                 } else {
                     Toast.makeText(applicationContext, "Login failed! Please try again later", Toast.LENGTH_LONG).show()
