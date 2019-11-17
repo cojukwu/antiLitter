@@ -51,7 +51,6 @@ class EndScreenActivity : AppCompatActivity() {
         scoreView = findViewById<View>(R.id.myScore) as TextView
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
-        resetBtn = findViewById<View>(R.id.resetBtn) as ImageButton
         flare = findViewById<View>(R.id.flare) as ImageView
         thumbsUp1 = findViewById<View>(R.id.flare_tUp1) as ImageView
         thumbsUp2 = findViewById<View>(R.id.flare_tUp2) as ImageView

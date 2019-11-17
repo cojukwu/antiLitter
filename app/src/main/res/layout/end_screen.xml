@@ -12,7 +12,7 @@
         android:id="@+id/playAgainBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="508dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -20,24 +20,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play_again_btn" />
 
-
     <ImageButton
         android:id="@+id/quitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/quit_btn" />
-
-    <ImageButton
-        android:id="@+id/resetBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="96dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +76,7 @@
         android:id="@+id/yourTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="272dp"
+        android:layout_marginBottom="256dp"
         android:fontFamily="@font/sofia_pro_bold"
         android:text="Your Time: 00:00"
         android:textColor="@color/textColor"
@@ -102,7 +89,7 @@
         android:id="@+id/yourHighScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="404dp"
         android:fontFamily="@font/sofia_pro_bold"
         android:text="High Score: 0"
         android:textColor="@color/textColor"
