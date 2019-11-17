@@ -100,6 +100,8 @@ class EndScreenActivity : AppCompatActivity() {
         seconds = ((time - hours * 3600000 - minutes * 60000) / 1000).toInt()
         yourTime?.setText("Your Time : 0${minutes}:${seconds}")
 
+
+
         highScoreView = findViewById(R.id.yourHighScore)
         highScore = prefs.getInt(HIGH_SCORE_KEY, 0)
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
