@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="59dp"
-        android:fontFamily="@font/sofia_pro_semibold"
+        android:fontFamily="@font/prod_bold"
         android:gravity="center"
         android:text="Account Login"
         android:textSize="28dp" />
@@ -27,14 +27,14 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sofia_pro_semibold"
+        android:fontFamily="@font/prod"
         android:hint="Email" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sofia_pro_semibold"
+        android:fontFamily="@font/prod"
         android:hint="Password"
         android:inputType="textPassword" />
 

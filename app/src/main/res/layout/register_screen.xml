@@ -18,7 +18,7 @@ tools:context=".RegistrationActivity">
     <TextView
         android:layout_width="380dp"
         android:layout_height="59dp"
-        android:fontFamily="@font/sofia_pro_semibold"
+        android:fontFamily="@font/prod_bold"
         android:gravity="center"
         android:text="Register new account"
         android:textSize="28dp" />
@@ -27,7 +27,7 @@ tools:context=".RegistrationActivity">
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sofia_pro_semibold"
+        android:fontFamily="@font/prod"
         android:hint="Email" />
 
     <EditText
@@ -35,7 +35,7 @@ tools:context=".RegistrationActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:fontFamily="@font/sofia_pro_semibold"
+        android:fontFamily="@font/prod"
         android:inputType="textPassword" />
 
     <ProgressBar

@@ -77,16 +77,11 @@ class MainActivity : AppCompatActivity() {
         UserMail = intent.getStringExtra(LoginActivity.UserMail)
 
         // Import font (Sofia pro)
-        val sofiaProBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
-        val sofiaSemiBold = Typeface.createFromAsset(assets, "Fonts/sofia_pro_semibold.ttf")
 
         // Starts the timer
         timer?.start()
 
         // Setting the fonts
-        scoreView?.setTypeface(sofiaSemiBold)
-        questionView?.setTypeface(sofiaProBold)
-        numberQuestionView?.setTypeface(sofiaSemiBold)
 
         shuffleList = (0..19).toMutableList()
         shuffleList.shuffle()

@@ -28,11 +28,6 @@ class HomeActivity : AppCompatActivity() {
         aboutBtn = findViewById<View>(R.id.aboutBtn) as ImageButton
         loginBtn = findViewById<View>(R.id.loginBtn) as ImageButton
         registerBtn = findViewById<View>(R.id.signUpBtn) as ImageButton
-        // Import font (Sofia pro)
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
-
-        // Set title font to Sofia pro
-        title?.setTypeface(sofiaPro)
 
         // Play Button Pressed
         playBtn?.setOnClickListener{

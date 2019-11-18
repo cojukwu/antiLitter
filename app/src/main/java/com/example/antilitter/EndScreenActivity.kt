@@ -57,10 +57,6 @@ class EndScreenActivity : AppCompatActivity() {
         yourTime = findViewById<View>(R.id.yourTime) as TextView
         prefs = getPreferences(Context.MODE_PRIVATE)
 
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_bold.ttf")
-        title?.setTypeface(sofiaPro)
-        scoreView?.setTypeface(sofiaPro)
-
         // Animation
         animation = AnimationUtils.loadAnimation(this@EndScreenActivity , R.anim.animation)
         flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()

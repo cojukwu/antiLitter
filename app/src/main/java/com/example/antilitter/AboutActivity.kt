@@ -22,13 +22,6 @@ class AboutActivity : AppCompatActivity() {
         introTwo = findViewById<View>(R.id.introTwo) as TextView
         creator = findViewById<View>(R.id.creators) as TextView
 
-        // Import font (Sofia pro)
-        val sofiaPro = Typeface.createFromAsset(assets, "Fonts/sofia_pro_semibold.ttf")
-        aboutText?.setTypeface(sofiaPro)
-        introOne?.setTypeface(sofiaPro)
-        introTwo?.setTypeface(sofiaPro)
-        creator?.setTypeface(sofiaPro)
-
     }
     override fun onBackPressed() {
         super.onBackPressed()
