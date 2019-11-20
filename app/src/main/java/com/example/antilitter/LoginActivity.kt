@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity(){
     private var userEmail: EditText? = null
     private var userPassword: EditText? = null
     private var loginBtn: ImageButton? = null
+    private var progressBar: ProgressBar? = null
 
     private var mAuth: FirebaseAuth? = null
 
@@ -42,11 +43,14 @@ class LoginActivity : AppCompatActivity(){
         mAuth = FirebaseAuth.getInstance()
 
         initializeUI()
+        progressBar = findViewById(R.id.progressBar)
 
         loginBtn!!.setOnClickListener { loginUserAccount() }
     }
 
     private fun loginUserAccount() {
+        progressBar!!.visibility = View.VISIBLE
+
         val email: String = userEmail?.text.toString()
         val password: String = userPassword?.text.toString()
 
@@ -61,6 +65,7 @@ class LoginActivity : AppCompatActivity(){
 
         mAuth!!.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
+                progressBar?.visibility = View.GONE
                 if (task.isSuccessful) {
                     Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)

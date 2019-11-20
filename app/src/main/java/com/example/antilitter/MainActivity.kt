@@ -8,9 +8,11 @@ import android.graphics.Typeface
 import android.widget.TextView
 import android.widget.ProgressBar
 import android.content.Intent
+import android.os.Handler
 import android.os.SystemClock
 import android.util.Log
 import android.view.Gravity
+import android.view.WindowManager
 import android.widget.Toast
 import android.widget.Chronometer
 
@@ -31,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     private var progressBar: ProgressBar? = null
     private var timer : Chronometer? = null
     private var layout : View? = null
+    private var dimBkg : ImageView? = null
+
 
     // Data Element
     private var mQuestionLibrary: QuestionLibrary? = QuestionLibrary()
@@ -55,7 +59,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         layout = findViewById<View>(R.id.layout)
+        dimBkg = findViewById<View>(R.id.dimBkg) as ImageView
         // Other Text
         scoreView = findViewById<View>(R.id.score) as TextView
         scoreView.text = "Score: 0"
@@ -111,6 +117,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "incorrect answer")
             }
             updateQuestion()
+
         }
         trashBtn?.setOnClickListener {
             if (type.equals("trash")) {
@@ -122,6 +129,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "incorrect answer")
             }
             updateQuestion()
+
         }
 
     }
@@ -156,6 +164,7 @@ class MainActivity : AppCompatActivity() {
 
         // Compost
         if (type == "compost") {
+
             val toast = Toast(applicationContext)
             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
             toast.duration = Toast.LENGTH_LONG
@@ -166,6 +175,8 @@ class MainActivity : AppCompatActivity() {
             factComp = toast.view.findViewById<View>(R.id.fact_comp) as TextView
             factComp?.setText(facts.get(0))
             toast.show()
+            //dimBkg!!.visibility = View.VISIBLE
+
 
         }
 
@@ -183,6 +194,8 @@ class MainActivity : AppCompatActivity() {
             factRecy = toast.view.findViewById<View>(R.id.fact_rec) as TextView
             factRecy?.setText(facts.get(0))
             toast.show()
+            //dimBkg!!.visibility = View.VISIBLE
+
         }
 
         // Trash
@@ -199,9 +212,11 @@ class MainActivity : AppCompatActivity() {
             factTrash = toast.view.findViewById<View>(R.id.fact_trash) as TextView
             factTrash?.setText(facts.get(0))
             toast.show()
+            //dimBkg!!.visibility = View.VISIBLE
         }
 
     }
+
 
     // Adds transitions
     override fun onBackPressed() {
