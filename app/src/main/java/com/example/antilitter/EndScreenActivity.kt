@@ -40,7 +40,7 @@ class EndScreenActivity : AppCompatActivity() {
     private var seconds: Int = 0
     private lateinit var prefs: SharedPreferences
 
-    private lateinit var databaseGames: DatabaseReference
+    internal lateinit var databaseGames: DatabaseReference
 
     // Animation
     private var animation: Animation? = null

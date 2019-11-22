@@ -24,7 +24,7 @@ class LeaderboardActivity : AppCompatActivity() {
     private var user3score: TextView? = null
 
     internal lateinit var games: MutableList<Game>
-    private lateinit var databaseGames: DatabaseReference
+    internal lateinit var databaseGames: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +62,7 @@ class LeaderboardActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-
+                Log.d("LEADERBOARD", "The read failed.")
             }
         })
 
