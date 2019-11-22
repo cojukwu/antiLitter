@@ -13,7 +13,7 @@ class HomeActivity : AppCompatActivity() {
 
     // UI Elements
     private var title: TextView? = null
-    private var playBtn: ImageButton? = null
+    private var leaderboardBtn: ImageButton? = null
     private var aboutBtn: ImageButton? = null
     private var loginBtn : ImageButton? = null
     private var registerBtn : ImageButton? = null
@@ -24,15 +24,15 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.home_screen)
 
         title = findViewById<View>(R.id.title) as TextView
-        playBtn = findViewById<View>(R.id.playBtn) as ImageButton
+        leaderboardBtn = findViewById<View>(R.id.leaderboardBtn) as ImageButton
         aboutBtn = findViewById<View>(R.id.aboutBtn) as ImageButton
         loginBtn = findViewById<View>(R.id.loginBtn) as ImageButton
         registerBtn = findViewById<View>(R.id.signUpBtn) as ImageButton
 
-        // Play Button Pressed
-        playBtn?.setOnClickListener{
-            val gameIntent = Intent(this@HomeActivity, MainActivity::class.java)
-            startActivity(gameIntent)
+        // Leaderboard Button Pressed
+        leaderboardBtn?.setOnClickListener{
+            val leaderboardIntent = Intent(this@HomeActivity, LeaderboardActivity::class.java)
+            startActivity(leaderboardIntent)
             overridePendingTransition(R.anim.trans, R.anim.out)
         }
 

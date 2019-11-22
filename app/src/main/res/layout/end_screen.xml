@@ -7,17 +7,120 @@
     android:background="#FFFFFF"
     tools:context=".EndScreenActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="971dp"
+        android:layout_height="1325dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/shapes" />
+
+    <RelativeLayout
+        android:id="@+id/toast_comp"
+        android:layout_width="326dp"
+        android:layout_height="281dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/endbkg"
+        app:layout_constraintBottom_toTopOf="@+id/playAgainBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/usernameEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="70dp"
+            android:layout_toEndOf="@+id/userIcon"
+            android:fontFamily="@font/prod_bold"
+            android:gravity="center"
+            android:text="username"
+            android:textColor="@color/textColor"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/yourTime"
+            android:layout_width="124dp"
+            android:layout_height="63dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="193dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/prod_bold"
+            android:gravity="center"
+            android:text="Your Time: 00:00"
+            android:textColor="#0B9271"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/yourHighScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="197dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="31dp"
+            android:layout_toEndOf="@+id/yourTime"
+            android:fontFamily="@font/prod_bold"
+            android:gravity="center"
+            android:text="High Score: 0"
+            android:textColor="#0B9271"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/myScore"
+            android:layout_width="215dp"
+            android:layout_height="134dp"
+            android:layout_below="@+id/usernameEnd"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/prod_bold"
+            android:gravity="center"
+            android:text="0/20"
+            android:textColor="@color/textColor"
+            android:textSize="80dp" />
+
+        <ImageView
+            android:id="@+id/userIcon"
+            android:layout_width="46dp"
+            android:layout_height="47dp"
+            android:layout_above="@+id/myScore"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp"
+            app:srcCompat="@drawable/icon" />
+    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/playAgainBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="508dp"
+        android:layout_marginBottom="28dp"
         android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/quitBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play_again_btn" />
 
     <ImageButton
@@ -32,102 +135,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/quit_btn" />
 
-    <ImageView
-        android:id="@+id/flare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:background="@null"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/confetti" />
-
-    <TextView
-        android:id="@+id/myScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
-        android:text="0/20"
-        android:textColor="@color/textColor"
-        android:fontFamily="@font/prod_bold"
-        android:textSize="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/congratsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="180dp"
+        android:fontFamily="@font/prod_bold"
         android:gravity="center"
         android:text="text"
         android:textColor="@color/textColor"
-        android:fontFamily="@font/prod_bold"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/yourTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
-        android:fontFamily="@font/prod_bold"
-        android:text="Your Time: 00:00"
-        android:textColor="@color/textColor"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/yourHighScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="404dp"
-        android:fontFamily="@font/prod_bold"
-        android:text="High Score: 0"
-        android:textColor="@color/textColor"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/flare_tUp1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="260dp"
-        android:background="@null"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/myScore"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/thumbsup" />
-
-    <ImageView
-        android:id="@+id/flare_tUp2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="16dp"
-        android:background="@null"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/myScore"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/thumbsup" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

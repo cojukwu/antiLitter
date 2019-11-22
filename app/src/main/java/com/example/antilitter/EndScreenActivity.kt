@@ -25,7 +25,6 @@ class EndScreenActivity : AppCompatActivity() {
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
     private var resetBtn: ImageButton? = null
-    private var flare : ImageView? = null
     private var thumbsUp1 : ImageView? = null
     private var thumbsUp2 : ImageView? = null
     private var yourTime : TextView? = null
@@ -51,16 +50,13 @@ class EndScreenActivity : AppCompatActivity() {
         scoreView = findViewById<View>(R.id.myScore) as TextView
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
-        flare = findViewById<View>(R.id.flare) as ImageView
-        thumbsUp1 = findViewById<View>(R.id.flare_tUp1) as ImageView
-        thumbsUp2 = findViewById<View>(R.id.flare_tUp2) as ImageView
         yourTime = findViewById<View>(R.id.yourTime) as TextView
         prefs = getPreferences(Context.MODE_PRIVATE)
 
         // Animation
         animation = AnimationUtils.loadAnimation(this@EndScreenActivity , R.anim.animation)
-        flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
-        flare?.startAnimation(animation)
+        //flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
+        //flare?.startAnimation(animation)
 
         playAgainBtn?.setOnClickListener {
             val endIntent = Intent(this@EndScreenActivity, MainActivity::class.java)

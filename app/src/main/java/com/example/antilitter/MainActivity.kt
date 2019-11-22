@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         UserMail = intent.getStringExtra(LoginActivity.UserMail)
 
         // Import font (Sofia pro)
-
+        Log.d(TAG,prog.toString())
         // Starts the timer
         timer?.start()
 
@@ -151,11 +151,11 @@ class MainActivity : AppCompatActivity() {
 
             Log.d(TAG, numberQuestion.toString())
 
+            progressBar!!.setProgress(prog)
+            prog += 5
             numberQuestion++
             // Go to end screen
 
-            progressBar?.setProgress(prog)
-            prog += 5
         }
 
     }
