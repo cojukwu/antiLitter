@@ -52,7 +52,7 @@
             android:id="@+id/trashBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:background="@null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
             android:id="@+id/recycleBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:background="@null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -141,7 +141,6 @@
             app:layout_constraintTop_toTopOf="@+id/progressBar"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/dimmed" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

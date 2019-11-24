@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
         timer = findViewById<View>(R.id.chronometer) as Chronometer
 
+        progressBar!!.setProgress(0)
+        progressBar!!.setMax(100)
+        progressBar!!.setProgress(5)
+
         // Get User ID
         val intent = intent
         UserId = intent.getStringExtra(LoginActivity.UserID)
@@ -141,6 +145,7 @@ class MainActivity : AppCompatActivity() {
             endIntent.putExtra(FINAL_SCORE, score)
             endIntent.putExtra(USER_ID, UserId)
             endIntent.putExtra(USER_MAIL, UserMail)
+            progressBar!!.setProgress(5)
             startActivity(endIntent)
         } else {
             image = mQuestionLibrary!!.getImage(shuffleList.get(numberQuestion))

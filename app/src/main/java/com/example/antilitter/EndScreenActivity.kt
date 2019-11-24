@@ -15,6 +15,12 @@ import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
 // End of the game Activity
 class EndScreenActivity : AppCompatActivity() {
     private var title: TextView? = null
@@ -34,6 +40,8 @@ class EndScreenActivity : AppCompatActivity() {
     private var seconds: Int = 0
     private lateinit var prefs: SharedPreferences
 
+    internal lateinit var databaseGames: DatabaseReference
+
     // Animation
     private var animation: Animation? = null
 
@@ -52,6 +60,9 @@ class EndScreenActivity : AppCompatActivity() {
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
         yourTime = findViewById<View>(R.id.yourTime) as TextView
         prefs = getPreferences(Context.MODE_PRIVATE)
+
+        databaseGames = FirebaseDatabase.getInstance().getReference("games")
+
 
         // Animation
         animation = AnimationUtils.loadAnimation(this@EndScreenActivity , R.anim.animation)
@@ -96,6 +107,11 @@ class EndScreenActivity : AppCompatActivity() {
         highScoreView = findViewById(R.id.yourHighScore)
         highScore = prefs.getInt(HIGH_SCORE_KEY, 0)
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
+
+        // Add to firebase database
+        val id = databaseGames.push().key
+        val game = Game(UserMail, score, time)
+        databaseGames.child(id.toString()).setValue(game)
 
         // Change text based on score
         if (score >= 15) {
