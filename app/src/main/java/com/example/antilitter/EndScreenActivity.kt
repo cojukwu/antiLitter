@@ -25,19 +25,19 @@ import com.google.firebase.database.ValueEventListener
 class EndScreenActivity : AppCompatActivity() {
     private var title: TextView? = null
     private lateinit var scoreView : TextView
+    private lateinit var username : TextView
     private lateinit var highScoreView : TextView
     private var score : Int = 0
     private var highScore : Int = 0
     private var playAgainBtn: ImageButton? = null
     private var quitBtn: ImageButton? = null
     private var resetBtn: ImageButton? = null
-    private var thumbsUp1 : ImageView? = null
-    private var thumbsUp2 : ImageView? = null
     private var yourTime : TextView? = null
     private var time: Long = 0
     private var hours: Int = 0
     private var minutes: Int = 0
     private var seconds: Int = 0
+    private var newUserName: String = ""
     private lateinit var prefs: SharedPreferences
 
     internal lateinit var databaseGames: DatabaseReference
@@ -56,6 +56,7 @@ class EndScreenActivity : AppCompatActivity() {
 
         title = findViewById<View>(R.id.congratsTitle) as TextView
         scoreView = findViewById<View>(R.id.myScore) as TextView
+        username = findViewById(R.id.usernameEnd) as TextView
         playAgainBtn = findViewById<View>(R.id.playAgainBtn) as ImageButton
         quitBtn = findViewById<View>(R.id.quitBtn) as ImageButton
         yourTime = findViewById<View>(R.id.yourTime) as TextView
@@ -63,15 +64,16 @@ class EndScreenActivity : AppCompatActivity() {
 
         databaseGames = FirebaseDatabase.getInstance().getReference("games")
 
-
         // Animation
         animation = AnimationUtils.loadAnimation(this@EndScreenActivity , R.anim.animation)
         //flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
         //flare?.startAnimation(animation)
 
         playAgainBtn?.setOnClickListener {
-            val endIntent = Intent(this@EndScreenActivity, MainActivity::class.java)
-            startActivity(endIntent)
+            val playAgainIntent = Intent(this@EndScreenActivity, MainActivity::class.java)
+
+            startActivity(playAgainIntent)
+
         }
 
         quitBtn?.setOnClickListener {
@@ -93,7 +95,7 @@ class EndScreenActivity : AppCompatActivity() {
         val intent = intent
         UserId = intent.getStringExtra(MainActivity.USER_ID)
         UserMail = intent.getStringExtra(MainActivity.USER_MAIL)
-
+        //newUserName = UserMail.substring(0, UserMail.indexOf('@'))
         scoreView.text = intent.getIntExtra(MainActivity.FINAL_SCORE, 0).toString() + "/20"
 
         // Displays time
@@ -102,8 +104,9 @@ class EndScreenActivity : AppCompatActivity() {
         seconds = ((time - hours * 3600000 - minutes * 60000) / 1000).toInt()
         yourTime?.setText("Your Time : 0${minutes}:${seconds}")
 
+        // display username
+        username.setText(newUserName)
 
-        highScoreView = findViewById(R.id.yourHighScore)
         highScore = prefs.getInt(HIGH_SCORE_KEY, 0)
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
 
@@ -132,14 +135,7 @@ class EndScreenActivity : AppCompatActivity() {
             editor.putInt(HIGH_SCORE_KEY, score)
             editor.apply()
 
-            highScoreView.text = "High Score: " + score.toString()
         }
-
-        else {
-            highScoreView.text = "High Score: " + highScore.toString()
-        }
-
-
 
     }
     // Adds transitions

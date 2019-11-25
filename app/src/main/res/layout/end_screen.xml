@@ -11,7 +11,7 @@
         android:id="@+id/congratsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/prod_bold"
         android:gravity="center"
         android:text="text"
@@ -24,26 +24,24 @@
     <RelativeLayout
         android:id="@+id/toast_comp"
         android:layout_width="326dp"
-        android:layout_height="281dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="297dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/endbkg"
-        app:layout_constraintBottom_toTopOf="@+id/playAgainBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/congratsTitle">
 
         <TextView
             android:id="@+id/usernameEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@+id/userIcon"
+            android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="-2dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="70dp"
-            android:layout_toEndOf="@+id/userIcon"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="0dp"
             android:fontFamily="@font/prod_bold"
             android:gravity="center"
             android:text="username"
@@ -57,31 +55,15 @@
 
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="193dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="208dp"
+            android:layout_marginEnd="101dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/prod_bold"
             android:gravity="center"
             android:text="Your Time: 00:00"
-            android:textColor="#0B9271"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/yourHighScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="197dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="31dp"
-            android:layout_toEndOf="@+id/yourTime"
-            android:fontFamily="@font/prod_bold"
-            android:gravity="center"
-            android:text="High Score: 0"
             android:textColor="#0B9271"
             android:textSize="20dp" />
 
@@ -92,11 +74,9 @@
             android:layout_below="@+id/usernameEnd"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="23dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="-22dp"
             android:layout_marginEnd="25dp"
-            android:layout_marginBottom="86dp"
             android:fontFamily="@font/prod_bold"
             android:gravity="center"
             android:text="0/20"
@@ -107,13 +87,13 @@
             android:id="@+id/userIcon"
             android:layout_width="46dp"
             android:layout_height="47dp"
-            android:layout_above="@+id/myScore"
 
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="77dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="6dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="140dp"
             app:srcCompat="@drawable/icon" />
     </RelativeLayout>
 
@@ -121,27 +101,25 @@
         android:id="@+id/playAgainBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="28dp"
         android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/quitBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toast_comp"
         app:srcCompat="@drawable/play_again_btn" />
 
     <ImageButton
         android:id="@+id/quitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginTop="20dp"
         android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playAgainBtn"
         app:srcCompat="@drawable/quit_btn" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
