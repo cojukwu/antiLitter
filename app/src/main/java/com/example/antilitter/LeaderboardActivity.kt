@@ -38,7 +38,7 @@ class LeaderboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.leaderboard_screen)
 
-<<<<<<< HEAD
+
         val listItems = arrayOfNulls<String>(10)
 
 //        user1 = findViewById(R.id.user1)
@@ -52,7 +52,7 @@ class LeaderboardActivity : AppCompatActivity() {
 //        user3 = findViewById(R.id.user3)
 //        user3time = findViewById(R.id.user3time)
 //        user3score = findViewById(R.id.user3score)
-=======
+
 //        listView = findViewById<ListView>(R.id.rank_list_view)
 //        val listItems = arrayOfNulls<String>(10)
 
@@ -67,7 +67,6 @@ class LeaderboardActivity : AppCompatActivity() {
         user3 = findViewById(R.id.user3)
         user3time = findViewById(R.id.user3time)
         user3score = findViewById(R.id.user3score)
->>>>>>> 832c66299a55cbfd06e143afd5c0b902c25b161d
 
         games = ArrayList()
 

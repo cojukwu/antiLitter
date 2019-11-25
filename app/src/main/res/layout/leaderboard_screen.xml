@@ -54,22 +54,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="224dp"
         android:text="user1"
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/prod_bold"
-        android:text="Leaderboard"
-        android:textColor="@color/textColor"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
->>>>>>> 832c66299a55cbfd06e143afd5c0b902c25b161d
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
     <TextView
-<<<<<<< HEAD
         android:id="@+id/user1time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,49 +94,6 @@
         app:layout_constraintTop_toBottomOf="@+id/user2score" />
 
 
-=======
-        android:id="@+id/user1"
-        android:layout_width="108dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="224dp"
-        android:text="user1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/user1score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="40dp"
-        android:text="0/20"
-        app:layout_constraintEnd_toStartOf="@+id/user1time"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toEndOf="@+id/user1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/user3score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="0/20"
-        app:layout_constraintEnd_toStartOf="@+id/user3time"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintStart_toEndOf="@+id/user3"
-        app:layout_constraintTop_toBottomOf="@+id/user2score" />
-
-    <TextView
-        android:id="@+id/user1time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="44dp"
-        android:text="00:00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
->>>>>>> 832c66299a55cbfd06e143afd5c0b902c25b161d
 
     <TextView
         android:id="@+id/user2"
