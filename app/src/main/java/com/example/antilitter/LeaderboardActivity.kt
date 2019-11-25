@@ -22,6 +22,10 @@ class LeaderboardActivity : AppCompatActivity() {
     private var user1score: TextView? = null
     private var user2score: TextView? = null
     private var user3score: TextView? = null
+    private var time: Long = 0
+    private var hours: Int = 0
+    private var minutes: Int = 0
+    private var seconds: Int = 0
 
     internal lateinit var games: MutableList<Game>
     internal lateinit var databaseGames: DatabaseReference
@@ -56,20 +60,35 @@ class LeaderboardActivity : AppCompatActivity() {
                 for (postSnapshot in dataSnapshot.children) {
                     //getting game
                     val game = postSnapshot.getValue<Game>(Game::class.java)
+
+
                     //adding author to the list
                     games.add(game!!)
+
                 }
+                val sorted = games.sortedWith(gameComparator)
+                sorted.forEach{ Log.d("LEADERBOARD","score: ${it.score} time: ${it.time} email: ${it.userEmail}")}
+                Log.d("LEADERBOARD", sorted.toString())
+
+                user1!!.setText(sorted[0].userEmail)
+                user1score!!.setText(sorted[0].score.toString())
+                user1time!!.setText(setTime(sorted[0].time.toInt()))
+
+                user2!!.setText(sorted[1].userEmail)
+                user2score!!.setText(sorted[1].score.toString())
+                user2time!!.setText(setTime(sorted[1].time.toInt()))
+
+
+                user3!!.setText(sorted[2].userEmail)
+                user3score!!.setText(sorted[2].score.toString())
+                user3time!!.setText(setTime(sorted[2].time.toInt()))
+
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.d("LEADERBOARD", "The read failed.")
             }
         })
-
-        val sorted = games.sortedWith(gameComparator)
-        sorted.forEach{ Log.d("LEADERBOARD","score: ${it.score} time: ${it.time} email: ${it.userEmail}")}
-
-        Log.d("LEADERBOARD", "Hello World")
 
     }
 
@@ -80,15 +99,27 @@ class LeaderboardActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.trans2, R.anim.out2)
     }
 
+    fun setTime(time : Int) : String{
+        var retTime = ""
+        minutes = ((time - hours * 3600000) / 60000)
+        seconds = ((time - hours * 3600000 - minutes * 60000) / 1000)
+        retTime = "0${minutes}:${seconds}"
+        return retTime
+    }
 
     val gameComparator =  object: Comparator<Game> {
         override fun compare(o1: Game, o2: Game): Int {
-            if (o1.score > o2.score) {
-                return 1;
-            } else if (o1.score < o2.score) {
-                return -1;
-            } else {
-                return o1.time.compareTo(o2.time);
+            if (o1.score < o2.score) {
+                return 1
+            } else if (o1.score > o2.score) {
+                return -1
+            } else if (o1.time > o2.time){
+                return 1
+            } else if (o1.time < o2.time){
+                return -1
+            }
+            else {
+                return 0
             }
         }
     }

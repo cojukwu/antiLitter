@@ -103,7 +103,6 @@ class EndScreenActivity : AppCompatActivity() {
         yourTime?.setText("Your Time : 0${minutes}:${seconds}")
 
 
-
         highScoreView = findViewById(R.id.yourHighScore)
         highScore = prefs.getInt(HIGH_SCORE_KEY, 0)
         score = intent.getIntExtra(MainActivity.FINAL_SCORE, 0)
