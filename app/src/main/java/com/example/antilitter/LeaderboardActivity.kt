@@ -29,7 +29,7 @@ class LeaderboardActivity : AppCompatActivity() {
     private var minutes: Int = 0
     private var seconds: Int = 0
 
-    private lateinit var listView: TextView
+    //private lateinit var listView: ListView
 
     internal lateinit var games: MutableList<Game>
     internal lateinit var databaseGames: DatabaseReference
@@ -38,6 +38,7 @@ class LeaderboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.leaderboard_screen)
 
+<<<<<<< HEAD
         val listItems = arrayOfNulls<String>(10)
 
 //        user1 = findViewById(R.id.user1)
@@ -51,11 +52,29 @@ class LeaderboardActivity : AppCompatActivity() {
 //        user3 = findViewById(R.id.user3)
 //        user3time = findViewById(R.id.user3time)
 //        user3score = findViewById(R.id.user3score)
+=======
+//        listView = findViewById<ListView>(R.id.rank_list_view)
+//        val listItems = arrayOfNulls<String>(10)
+
+        user1 = findViewById(R.id.user1)
+        user1time = findViewById(R.id.user1time)
+        user1score = findViewById(R.id.user1score)
+
+        user2 = findViewById(R.id.user2)
+        user2time = findViewById(R.id.user2time)
+        user2score = findViewById(R.id.user2score)
+
+        user3 = findViewById(R.id.user3)
+        user3time = findViewById(R.id.user3time)
+        user3score = findViewById(R.id.user3score)
+>>>>>>> 832c66299a55cbfd06e143afd5c0b902c25b161d
 
         games = ArrayList()
 
         databaseGames = FirebaseDatabase.getInstance().getReference("games")
 
+        // For some reason the program is never triggering the listener (doesn't go inside the method below)
+        // Maybe because we're initializing the database twice (here and in EndScreenActivity)?
         databaseGames.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 games.clear()
@@ -65,6 +84,7 @@ class LeaderboardActivity : AppCompatActivity() {
                     //getting game
                     val game = postSnapshot.getValue<Game>(Game::class.java)
 
+
                     //adding author to the list
                     games.add(game!!)
 
@@ -73,23 +93,24 @@ class LeaderboardActivity : AppCompatActivity() {
                 sorted.forEach{ Log.d("LEADERBOARD","score: ${it.score} time: ${it.time} email: ${it.userEmail}")}
                 Log.d("LEADERBOARD", sorted.toString())
 
-//                user1!!.setText(sorted[0].userEmail)
-//                user1score!!.setText(sorted[0].score.toString())
-//                user1time!!.setText(setTime(sorted[0].time.toInt()))
-//
-//                user2!!.setText(sorted[1].userEmail)
-//                user2score!!.setText(sorted[1].score.toString())
-//                user2time!!.setText(setTime(sorted[1].time.toInt()))
-//
-//
-//                user3!!.setText(sorted[2].userEmail)
-//                user3score!!.setText(sorted[2].score.toString())
-//                user3time!!.setText(setTime(sorted[2].time.toInt()))
+                user1!!.setText(sorted[0].userEmail)
+                user1score!!.setText(sorted[0].score.toString())
+                user1time!!.setText(setTime(sorted[0].time.toInt()))
 
-                for (i in 0 until 10) {
-                    val game = sorted[i]
-                    listItems[i] = game.userEmail + "   " + game.score.toString()
-                }
+                user2!!.setText(sorted[1].userEmail)
+                user2score!!.setText(sorted[1].score.toString())
+                user2time!!.setText(setTime(sorted[1].time.toInt()))
+
+
+                user3!!.setText(sorted[2].userEmail)
+                user3score!!.setText(sorted[2].score.toString())
+                user3time!!.setText(setTime(sorted[2].time.toInt()))
+
+
+//                for (i in 0 until 10) {
+//                    val game = sorted[i]
+//                    listItems[i] = game.userEmail + "   " + game.score.toString() + "   " + game.time.toInt()
+//                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -97,18 +118,9 @@ class LeaderboardActivity : AppCompatActivity() {
             }
         })
 
-        var listAdapter = ListViewAdapter(
-            this,
-            R.layout.leaderboard_screen,
-            listItems
-        )
-
-
-
-
 //        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
-        //listView.adapter = adapter
-        //listView.setAdapter(adapter)
+//        listView.adapter = adapter
+
     }
 
 
