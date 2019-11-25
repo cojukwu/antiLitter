@@ -77,17 +77,12 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
         timer = findViewById<View>(R.id.chronometer) as Chronometer
 
-        progressBar!!.setProgress(0)
-        progressBar!!.setMax(100)
-        progressBar!!.setProgress(5)
-
         // Get User ID
         val intent = intent
-        UserId = intent.getStringExtra(LoginActivity.UserID)
-        UserMail = intent.getStringExtra(LoginActivity.UserMail)
 
-        // Import font (Sofia pro)
-        Log.d(TAG,prog.toString())
+        UserMail = intent.getStringExtra(LoginActivity.UserMail) ?: "Default values if not provided"
+        UserId = intent.getStringExtra(LoginActivity.UserID) ?: "Default values if not provided"
+
         // Starts the timer
         timer?.start()
 
@@ -133,9 +128,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "incorrect answer")
             }
             updateQuestion()
-
         }
-
     }
 
     fun updateQuestion() {
