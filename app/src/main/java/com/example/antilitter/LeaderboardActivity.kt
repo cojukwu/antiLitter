@@ -39,7 +39,6 @@ class LeaderboardActivity : AppCompatActivity() {
         setContentView(R.layout.leaderboard_screen)
 
         val listItems = arrayOfNulls<String>(10)
-        listView = findViewById<TextView>(R.id.rank_list_view)
 
 //        user1 = findViewById(R.id.user1)
 //        user1time = findViewById(R.id.user1time)

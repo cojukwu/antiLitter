@@ -80,8 +80,8 @@ class MainActivity : AppCompatActivity() {
         // Get User ID
         val intent = intent
 
-        UserMail = intent.getStringExtra(LoginActivity.UserMail) ?: "Default values if not provided"
-        UserId = intent.getStringExtra(LoginActivity.UserID) ?: "Default values if not provided"
+        UserMail = intent.getStringExtra(LoginActivity.UserMail)
+        UserId = intent.getStringExtra(LoginActivity.UserID)
 
         // Starts the timer
         timer?.start()

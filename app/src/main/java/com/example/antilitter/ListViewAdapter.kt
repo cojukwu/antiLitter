@@ -25,7 +25,6 @@ internal class ListViewAdapter(context: Context, resource: Int, objects: Array<S
             // Cache View information in ViewHolder Object
             val viewHolder = ViewHolder()
             newView.tag = viewHolder
-            viewHolder.textView = newView.findViewById(R.id.rank_list_view)
 
         } else {
             newView = convertView

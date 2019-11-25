@@ -95,7 +95,7 @@ class EndScreenActivity : AppCompatActivity() {
         val intent = intent
         UserId = intent.getStringExtra(MainActivity.USER_ID)
         UserMail = intent.getStringExtra(MainActivity.USER_MAIL)
-        //newUserName = UserMail.substring(0, UserMail.indexOf('@'))
+        newUserName = UserMail.substring(0, UserMail.indexOf('@'))
         scoreView.text = intent.getIntExtra(MainActivity.FINAL_SCORE, 0).toString() + "/20"
 
         // Displays time
