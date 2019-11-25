@@ -5,129 +5,128 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--    <ListtView-->
+    <!--        android:id="@+id/rank_list_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:padding="16dp"-->
+    <!--        android:textAppearance="@android:style/TextAppearance.Material.Display1"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:background="@drawable/list_background"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="64dp"-->
-<!--        android:fontFamily="@font/prod_bold"-->
-<!--        android:text="Leaderboard"-->
-<!--        android:textColor="@color/textColor"-->
-<!--        android:textSize="30dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    </ListtView>-->
 
     <TextView
-        android:id="@+id/rank_list_view"
-        android:layout_width="match_parent"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="16dp"
-        android:textAppearance="@android:style/TextAppearance.Material.Display1"
-        android:textColor="@color/white"
-        android:background="@drawable/list_background"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/prod_bold"
+        android:text="Leaderboard"
+        android:textColor="@color/textColor"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </TextView>
+    <TextView
+        android:id="@+id/user1"
+        android:layout_width="108dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="224dp"
+        android:text="user1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user1"-->
-<!--        android:layout_width="108dp"-->
-<!--        android:layout_height="19dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="224dp"-->
-<!--        android:text="user1"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/user1score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="40dp"
+        android:text="0/20"
+        app:layout_constraintEnd_toStartOf="@+id/user1time"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toEndOf="@+id/user1"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user1score"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="224dp"-->
-<!--        android:layout_marginEnd="40dp"-->
-<!--        android:text="0/20"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/user1time"-->
-<!--        app:layout_constraintHorizontal_bias="0.421"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/user1"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/user3score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="0/20"
+        app:layout_constraintEnd_toStartOf="@+id/user3time"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toEndOf="@+id/user3"
+        app:layout_constraintTop_toBottomOf="@+id/user2score" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user3score"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="36dp"-->
-<!--        android:text="0/20"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/user3time"-->
-<!--        app:layout_constraintHorizontal_bias="0.316"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/user3"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user2score" />-->
+    <TextView
+        android:id="@+id/user1time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="44dp"
+        android:text="00:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user1time"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="224dp"-->
-<!--        android:layout_marginEnd="44dp"-->
-<!--        android:text="00:00"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/user2"
+        android:layout_width="108dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="user2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user1" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user2"-->
-<!--        android:layout_width="108dp"-->
-<!--        android:layout_height="19dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:text="user2"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user1" />-->
+    <TextView
+        android:id="@+id/user2time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="48dp"
+        android:text="00:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user1time" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user2time"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:layout_marginEnd="48dp"-->
-<!--        android:text="00:00"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user1time" />-->
+    <TextView
+        android:id="@+id/user3"
+        android:layout_width="108dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="user3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user2" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user3"-->
-<!--        android:layout_width="108dp"-->
-<!--        android:layout_height="19dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="36dp"-->
-<!--        android:text="user3"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user2" />-->
+    <TextView
+        android:id="@+id/user2score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="0/20"
+        app:layout_constraintEnd_toStartOf="@+id/user2time"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toEndOf="@+id/user2"
+        app:layout_constraintTop_toBottomOf="@+id/user1score" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/user2score"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:layout_marginEnd="40dp"-->
-<!--        android:text="0/20"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/user2time"-->
-<!--        app:layout_constraintHorizontal_bias="0.421"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/user2"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user1score" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/user3time"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="36dp"-->
-<!--        android:layout_marginEnd="48dp"-->
-<!--        android:text="00:00"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user2time" />-->
+    <TextView
+        android:id="@+id/user3time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="48dp"
+        android:text="00:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user2time" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
