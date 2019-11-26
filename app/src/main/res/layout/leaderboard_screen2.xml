@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:orientation="vertical"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <LinearLayout
         android:id="@+id/container1"
-        android:layout_width="match_parent"
+        android:layout_width="378dp"
         android:layout_height="101dp"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -23,47 +23,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/rank"
+            android:layout_width="52dp"
+            android:layout_height="85dp"
+            android:padding="10dp"
+            app:srcCompat="@drawable/one" />
+
         <TextView
             android:id="@+id/leaderboardUserName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="321dp"
+            android:layout_height="61dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:text="Username"
-            android:textColor="#000"
             android:fontFamily="@font/prod_bold"
-            android:textSize="18sp" />
+            android:padding="10dp"
+            android:text="Username"
+            android:textColor="#0B9271"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/leaderboardScore"
-            android:layout_width="447dp"
+            android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="2"
+            android:fontFamily="@font/prod_bold"
             android:text="0"
             android:textAlignment="center"
-
-            android:textColor="#000"
-            android:textSize="17sp"
-            android:fontFamily="@font/prod_bold"
-            />
+            android:textColor="#0B9271"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/leaderboardTime"
-            android:layout_width="447dp"
+            android:layout_width="442dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_weight="2"
+            android:layout_weight="3"
+            android:fontFamily="@font/prod_bold"
             android:text="00:00"
             android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="17sp"
-            android:fontFamily="@font/prod_bold"
-            />
-
+            android:textColor="#0B9271"
+            android:textSize="20sp" />
 
     </LinearLayout>
-
 
 
 </androidx.cardview.widget.CardView>

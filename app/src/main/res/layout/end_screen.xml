@@ -45,7 +45,7 @@
             android:fontFamily="@font/prod_bold"
             android:gravity="center"
             android:text="username"
-            android:textColor="@color/textColor"
+            android:textColor="#0B9271"
             android:textSize="23dp" />
 
         <TextView
@@ -65,7 +65,7 @@
             android:gravity="center"
             android:text="Your Time: 00:00"
             android:textColor="#0B9271"
-            android:textSize="20dp" />
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/myScore"
@@ -95,6 +95,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="140dp"
             app:srcCompat="@drawable/icon" />
+        
     </RelativeLayout>
 
     <ImageButton
@@ -120,6 +121,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playAgainBtn"
         app:srcCompat="@drawable/quit_btn" />
+
+    <ImageView
+        android:id="@+id/flare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/confetti" />
+
+    <ImageView
+        android:id="@+id/down"
+        android:layout_width="66dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="32dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thumbsdown" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

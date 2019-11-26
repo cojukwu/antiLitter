@@ -9,6 +9,9 @@ import kotlin.collections.ArrayList
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
+    val ranks = listOf(R.drawable.one, R.drawable.two,  R.drawable.three, R.drawable.four,
+        R.drawable.five,  R.drawable.six,  R.drawable.seven,  R.drawable.eight,
+        R.drawable.nine,  R.drawable.ten)
 
     private var items : List<Game> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -22,6 +25,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         when(holder) {
             is ViewHolder -> {
                 holder.bind(items.get(position))
+                holder.itemView.rank.setImageResource(ranks.get(position))
             }
         }
     }
@@ -44,12 +48,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         val leaderboard_userName = itemView.leaderboardUserName
         val leaderboard_userScore = itemView.leaderboardScore
         val leaderboard_userTime = itemView.leaderboardTime
+        val rank = itemView.rank
 
         fun bind(game: Game){
             leaderboard_userScore.setText(game.score.toString())
             leaderboard_userName.setText(game.userEmail.substring(0, game.userEmail.indexOf('@')))
             leaderboard_userTime.setText(setTime(game.time.toInt()))
-
         }
 
         fun setTime(time : Int) : String{

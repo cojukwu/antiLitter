@@ -37,6 +37,8 @@ class EndScreenActivity : AppCompatActivity() {
     private var hours: Int = 0
     private var minutes: Int = 0
     private var seconds: Int = 0
+    private var flare : ImageView? = null
+    private var thumbDown: ImageView? = null
     private var newUserName: String = ""
     private lateinit var prefs: SharedPreferences
 
@@ -54,6 +56,8 @@ class EndScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.end_screen)
 
+        thumbDown = findViewById(R.id.down) as ImageView
+        flare = findViewById<View>(R.id.flare) as ImageView
         title = findViewById<View>(R.id.congratsTitle) as TextView
         scoreView = findViewById<View>(R.id.myScore) as TextView
         username = findViewById(R.id.usernameEnd) as TextView
@@ -66,8 +70,12 @@ class EndScreenActivity : AppCompatActivity() {
 
         // Animation
         animation = AnimationUtils.loadAnimation(this@EndScreenActivity , R.anim.animation)
-        //flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
-        //flare?.startAnimation(animation)
+        flare?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
+        flare?.startAnimation(animation)
+
+        thumbDown?.animate()?.alpha(1.toFloat())?.setDuration(1000)?.start()
+        thumbDown?.startAnimation(animation)
+
 
         playAgainBtn?.setOnClickListener {
             val playAgainIntent = Intent(this@EndScreenActivity, MainActivity::class.java)
@@ -126,6 +134,9 @@ class EndScreenActivity : AppCompatActivity() {
 
         else if (score < 10) {
             title?.setText("Needs Some Work")
+            flare!!.visibility = View.GONE
+            thumbDown!!.visibility = View.VISIBLE
+
         }
 
         if (score > highScore) {

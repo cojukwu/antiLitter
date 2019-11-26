@@ -23,9 +23,6 @@ class LeaderboardActivity : AppCompatActivity() {
     private var user1score: TextView? = null
     private var user2score: TextView? = null
     private var user3score: TextView? = null
-    private var hours: Int = 0
-    private var minutes: Int = 0
-    private var seconds: Int = 0
     private lateinit var sorted : List<Game>
 
     //private lateinit var listView: ListView
@@ -134,6 +131,7 @@ class LeaderboardActivity : AppCompatActivity() {
             } else if (o1.time < o2.time){
                 return -1
             }
+
             else {
                 return 0
             }
