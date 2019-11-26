@@ -126,10 +126,14 @@ class EndScreenActivity : AppCompatActivity() {
         // Change text based on score
         if (score >= 15) {
             title?.setText("Amazing!")
+            thumbDown!!.visibility = View.GONE
+
         }
 
         else if (score >= 10 && score < 15) {
             title?.setText("Good Job")
+            thumbDown!!.visibility = View.GONE
+
         }
 
         else if (score < 10) {
