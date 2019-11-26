@@ -110,8 +110,8 @@ class LeaderboardActivity : AppCompatActivity() {
 
     private fun initRecyclerView(){
         recycler_view.layoutManager = LinearLayoutManager(this@LeaderboardActivity)
-        val topSpacingItemDec = TopSpacingItemDec(30)
-        recycler_view.addItemDecoration(topSpacingItemDec)
+        //val topSpacingItemDec = TopSpacingItemDec(30)
+        //recycler_view.addItemDecoration(topSpacingItemDec)
         blogAdapter = RecyclerAdapter()
         recycler_view.adapter = blogAdapter
 
