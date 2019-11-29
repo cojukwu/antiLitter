@@ -79,7 +79,8 @@ class EndScreenActivity : AppCompatActivity() {
 
         playAgainBtn?.setOnClickListener {
             val playAgainIntent = Intent(this@EndScreenActivity, MainActivity::class.java)
-
+            playAgainIntent.putExtra(MAIL_KEY, UserMail)
+            playAgainIntent.putExtra(ID_KEY, UserId)
             startActivity(playAgainIntent)
 
         }
@@ -161,5 +162,7 @@ class EndScreenActivity : AppCompatActivity() {
 
     companion object {
             val HIGH_SCORE_KEY = "HIGH_SCORE_KEY"
+            val MAIL_KEY = "com.example.antilitter.myhomelibrary.UMail"
+            val ID_KEY = "com.example.antilitter.myhomelibrary.UID"
     }
 }
