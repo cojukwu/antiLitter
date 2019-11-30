@@ -1,0 +1,4 @@
+No More Litter is a quiz app that encourages throwing waste away in its correct receptacle in an effort to reduce the amount of litter. The app is a quiz game that tests a user’s knowledge on which commonly used items should be composted, recycled, or thrown in the trash. At the end of the 20-question quiz, users see their high score and time. They are able to compete against themselves for a high score and quick time, or they can compete with players around the world users by reviewing the leaderboard. Users should create an account and login in order to play. Upon answering questions wrong, users will be presented with an alarming fact about littering. This educational quiz app is a fun way for people to learn how to properly dispose of their trash!
+
+
+Created By: Christina Benjamin, Chinazam Ojukwu and Kelli Webber
