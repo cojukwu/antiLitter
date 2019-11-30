@@ -1,5 +1,6 @@
 package com.example.antilitter
 
+import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -48,12 +49,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         val leaderboard_userName = itemView.leaderboardUserName
         val leaderboard_userScore = itemView.leaderboardScore
         val leaderboard_userTime = itemView.leaderboardTime
-        val rank = itemView.rank
 
         fun bind(game: Game){
             leaderboard_userScore.setText(game.score.toString())
-            leaderboard_userName.setText(game.userEmail.substring(0, game.userEmail.indexOf('@')))
             leaderboard_userTime.setText(setTime(game.time.toInt()))
+            leaderboard_userName.setText(game.userEmail.substring(0, game.userEmail.indexOf('@')))
+
         }
 
         fun setTime(time : Int) : String{
